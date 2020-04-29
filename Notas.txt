@@ -1,0 +1,7 @@
+Iniciar proyecto NODE JS
+	node init -y
+
+Intalar dependencia de typescript en desarrollo
+	npm i typescript -D
+Ejecutar el módulo de typescript con el comando INIT para iniciar la aplicación
+	npx typescript --init || npx tsc --init ====> lo que ejecuta y crea un archivo llamado tsconfig.json
