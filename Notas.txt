@@ -5,3 +5,34 @@ Intalar dependencia de typescript en desarrollo
 	npm i typescript -D
 Ejecutar el módulo de typescript con el comando INIT para iniciar la aplicación
 	npx typescript --init || npx tsc --init ====> lo que ejecuta y crea un archivo llamado tsconfig.json
+
+Crear carpeta src y dentro el archivo index.js
+
+Instalar el modulo de express
+	npm i express
+
+Instalar el modulo de typescript para ejecutar las declaraciones con express
+	npm i @types/express -D
+
+Para convertir el codigo de type ir a la configuración de tsconfig.json y realizar los siguientes cambios
+	1. "target": "es6" cambiar de ES5 => ES6 (con el objetivo de que NODE JS interprete la mayoria del codigo)
+	2. Descomentariar la carpeta de salida de la app y escribir de la siguiente manera "outDir":"./Dist"
+	3. En la consola escribir el siguiente comando para convertir typescript npx tsc
+
+Ahora podemos ejecutar la aplicación escribiendo en consola 
+	node dist/index.js
+
+Instalar el módulo para que observe cambios y al guardar reinicie el servidor automaticamente en tiempo de desarrollo
+	npm i nodemon -D 
+
+Configurar archivo de package.json para ejecutar automaticamente los comandos para ejecutar la aplicación nodemon en tiempo de desarrollo
+	"build":"tsc"
+	"dev":"nodemon src/index.ts --exec ts-node"
+
+Tambien se configura el archivo package.json para ejecutar automaticamente el comando dev con nodemon, sin embargo nodemon no entiende archivos typescript y deberá instalar el siguiente módulo para que pueda interpretarlo
+	npm i ts-node -D
+
+Ejecutamos en la consola el comando:
+	npm run dev en 
+
+Agregamos un archivo llamado app.ts en el que definiremos el servidor por medio de una clase
