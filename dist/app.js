@@ -13,15 +13,24 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const port = 3000;
+const morgan_1 = __importDefault(require("morgan"));
 class App {
-    constructor() {
+    constructor(port) {
+        this.port = port;
         this.app = express_1.default();
+        this.settings();
+        this.middlewares();
+    }
+    settings() {
+        this.app.set('port', this.port || process.env.PORT || 3000);
+    }
+    middlewares() {
+        this.app.use(morgan_1.default('dev'));
     }
     listen() {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.app.listen(3000);
-            console.log(`Server on port ${port}`);
+            yield this.app.listen(this.app.get('port'));
+            console.log(`Server on port ${this.port}`);
         });
     }
 }
