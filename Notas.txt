@@ -35,4 +35,22 @@ Tambien se configura el archivo package.json para ejecutar automaticamente el co
 Ejecutamos en la consola el comando:
 	npm run dev en 
 
+
+Instalar el middleware MORGAN nos proporcionará información como las peticiones http
+	npm i morgan
+
+Instalar el módulo de typescript para ejecutar las declaraciones con morgan, en caso de dar error el ts-node (transpilador de typescript a javascript) ejecutar el comando npm i ts-node -D para reinstalarlo
+	npm @type/morgan
+	npm i ts-node -D
+
+Instalar el modulo de MYSQL2 para conectar nodejs a la base de datos de mysql y se instala el 2 por que acepta promesas e instalar el transpilador para typescript para ejecutar declaraciones con mysql2
+	npm i mysql2
+	npm i types/mysql2 -D
+
+
+
+
+
+
 Agregamos un archivo llamado app.ts en el que definiremos el servidor por medio de una clase
+
